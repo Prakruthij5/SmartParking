@@ -1,0 +1,61 @@
+.loginPage{
+
+  background-color: rgba(20, 104, 197 , 0.1);
+    height: 450px;
+    width: 400px;
+    align-Self: center;
+    margin-Top: 60px;
+    transition: all .3s;
+    padding: 20px;
+}
+.account{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.loginheader{
+  text-align: center;
+  font-weight: bold;
+  
+  }
+
+  .registerPage{
+    background-color: rgba(20, 104, 197 , 0.1);
+    height: 600px;
+    width:400px;
+    align-Self:center;
+    margin-Top:15px;
+    padding: 20px;
+  }
+.title{
+   
+    text-align: center;
+    font-size: 25px;
+    font-family: sans-serif;
+} 
+
+
+.form{
+  margin-top: 30px;
+  margin-left: 20px;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.formGroup{
+    margin-top: 15px;
+}
+.errorMessage{
+  color: red;
+  margin-left: 20px;
+}
+.dropDown{
+  background-color:rgb(182 212 236);
+  /* height:50px; */
+  z-index:999;
+  position:absolute;
+  width:183px;
+   margin-top:11px;
+   margin-left:5px ;
+    display:flex;
+    flex-direction:column;
+}

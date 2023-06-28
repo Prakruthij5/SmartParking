@@ -1,0 +1,190 @@
+.sidebar{
+
+    background-color: #6eabe0;
+    width: 200px;
+    height: 100vh;
+    display: block;
+    align-items: center;
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    top: 75px;
+}
+
+.menu-title {
+
+    padding: 15px 20px !important;
+    letter-spacing: .05em;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    color:black;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 45px;
+
+    /* border:1px solid gray; */
+
+    a{
+        color: black;
+    }
+
+}
+
+.menu-title:hover{
+    background-color: #3b96d4;
+}
+
+
+
+
+.menu-icon{
+    margin: 1px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{text-decoration: none;
+color: black;}
+a:hover{
+
+    color: rgb(80, 78, 78);
+
+    text-decoration: none;
+
+}
+
+.metismenu{
+
+    position: absolute;
+
+    left: -41px;
+
+}
+
+// @media (max-width: 991.98px) {
+
+//     .sidebar {
+
+//         display: block;
+
+//     }
+
+//     body.vertical-collpsed {
+
+//         .sidebar {
+
+//             // display: block;
+
+//             width: 20px;
+
+//         }
+
+//     }
+
+// }
+
+
+
+
+@media (min-width: 991.99px) {
+
+    .sidebar {
+
+        display: block;
+
+    }  
+
+    body.vertical-collpsed {
+
+        .sidebar {
+
+                width:100px;
+
+        }
+
+    }
+
+}  
+
+.vertical-collpsed {
+
+   
+
+   .outlet{
+        margin-left: 90px;
+
+    }
+
+    .logo-lg{
+
+        display: none;
+
+    }
+
+    .sliderMenu{
+
+        display: block;
+
+    }
+
+    .sidebar {
+
+        position: absolute;
+
+        width: 90px !important;
+
+        z-index: 999;
+
+ 
+
+        // .simplebar-mask,
+
+        // .simplebar-content-wrapper {
+
+        //     overflow: visible !important;
+
+        // }
+
+        // Sidebar Menu
+
+        #sidebar-menu {
+
+ 
+
+            .menu-title,
+
+            .collapse.in {
+
+                // display: none !important;
+
+                //  font-size: none;
+                font-size: 10px;
+                 margin-left: 28px;
+                 font-weight: bold;
+                 width: 105px;
+
+            }
+
+           
+
+            .has-arrow {
+
+                &:after {
+
+                    display: none;
+
+                }
+
+            }
+
+        }
+
+ 
+
+    }
+
+  }

@@ -1,0 +1,29 @@
+.entryPage{
+    background-color: rgba(20, 104, 197 , 0.1);
+}
+.card{
+ display: flex;
+flex-direction: column;
+}
+.cardTitle{
+    font-weight: bold;
+    /* background-color: white; */
+    font-size: 18px;
+    padding-top:10px ;
+  }
+  .purpleBar{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  .alarmHeight{
+    height: 38px;
+    font-size: 15px;
+  }
+  .row{
+    justify-content: space-around;
+    display: flex;
+    margin:55px;
+    
+  }
