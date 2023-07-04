@@ -1,11 +1,12 @@
 .header{
-    background-color:#6eabe0;
+    background-color:#31c48d;
     width: 100%;
     height: 75px;
     /* text-align:center;  */
     position: fixed;
     font-size: 30px;
-     /* font-weight:bold;  */
+     font-weight:600; 
+     font:bold;
      /* font-style:italic; */
     text-decoration: none;
     display: flex;

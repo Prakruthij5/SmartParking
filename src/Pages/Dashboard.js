@@ -1,8 +1,4 @@
 import React,{useState} from 'react'
-
-// import SideBar from '../components/SideBar';
-
-// import {Bar, Doughnut, Radar, Scatter, PolarArea, Pie} from "react-chartjs-2";
 import { IoIosArrowDown } from "react-icons/io";
 import './dashboard.css';
 import Form  from "react-bootstrap/Form";
@@ -11,118 +7,87 @@ import { Button, Col, Row,Card, Alert, Container} from 'react-bootstrap';
 import { Pie } from 'react-chartjs-2';
 import { useEffect } from 'react';
 import axios from 'axios';
-
-
-
-
+import SeatMap from '../components/SeatMap';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+
 export default function Dashboard() {
+
 
   const[ entryGateNo, setEntryGateNo]=useState('');
   const[show, setShow]=useState(false);
 const[userData,setUserData]=useState({ labels: [], datasets: [ { label: 'Parking Data', backgroundColor: ['#36A2EB', '#FF6384'], hoverBackgroundColor: ['#36A2EB', '#FF6384'], data: [], }, ], });
-  // const data = [
-  //   { slots: 2497, count: 4000 },
-  //   { slots: 550, count: 4000 },
-  // ];
-
-
- 
+const[data,setData]=useState([]);
+const [isSwitchOn, setSwitchOn] = useState(false); 
+const handleToggle = () => { 
+  setSwitchOn(prevState => !prevState);
+ };
 
 let slots=[];
 const displayChart=(data)=>{
     console.log(data,"display data");
-    let available=2500 - data;
+    let available=10000 - data;
      slots = [
-      { park: data, count: 2500 },
-      { park: available, count: 2500 },
+      { park: data, count: 10000 },
+      { park: available, count: 10000 },
     ];
    setUserData({
       labels:slots.map((slot)=>slot.park),
       datasets: [
-    
           {
-    
           label:slots.Occupied,
           backgroundColor: ['#36A2EB', '#FF6384'],
           hoverBackgroundColor: [ '#36A2EB', '#FF6384'],
           data:slots.map((slot)=>slot.park),
+
       },
-    
       ],
-    
     },)
-    
 }
-const handleSelect=(gate)=>{
- setEntryGateNo(gate);
-  setShow(false);
-  console.log("api call for number of slots");
- 
-axios.get(`http://localhost:9000/parkingDetails/available/${gate}`) 
-.then(response => { 
-  // Handle the successful response
-  if (response.status==200){
-    displayChart(response.data);
+useEffect(() => {
+   fetchData();
+  }, []); 
+
+async function fetchData() { try {
+   const response = await axios.get(`http://localhost:9000/parkingDetails/parkingSlotList`);
+    const data = response.data;
+    console.log(response.data.length) ;
+    setData(data);
+    displayChart(response.data.length); 
+    
+  console.log(response.data);
+  console.log("data to be passed to seatmap",data);
+  // {data.map(item => ( slots.push(item.slotNum) ))}
+// slots = data.map(item => item.slotNum);
+  } 
+    catch (error) { console.error('Error:', error); } 
+  
   }
-    
-  }) 
-   .catch(error => {
-     // Handle the error
-      console.error(error); });
-}
 
 
   return (
-
     <div className='dashboard'>
+
+      <h4>Parking slots</h4>
+      <button onClick={handleToggle}> {isSwitchOn ? 'pie Chart' : 'view details'} </button>
+      <Container>
+    {isSwitchOn && <SeatMap  data = {data}/>} {!isSwitchOn && <Pie data={userData}/> }
       
-      {/* <SideBar/> */} 
+      {/* <Pie data={userData}/> */}
+      </Container>
 
-      <Form>
-        <Form.Group as={Row} className='row'>
-        <Form.Label column md={{ span: 5, offset: 0 }} lg={5} sm={5} className="headingFont control" >
+    
 
-Entry Gate No
+     
 
-  <span className="asterisk">&#42;</span> :
-  <div className="dropdown-container " style={{backgroundColor:'white',  width:'200px', padding:'5px'}}>
-  <div className="selected-item" style={{display:'flex', justifyContent:'space-between'}} onClick={() => setShow(!show)}>
-    {entryGateNo || <div >Select Gate No</div>}
-
-    <IoIosArrowDown/>
-
-  </div>
-    {show && (
-      <div className="dropdown-options dropDown">
-        {[1,2,3,4].map((gate, index) => (
-          <div
-            key={index}
-            className="dropdown-option"
-            style={{cursor:'pointer', marginTop:'5px', justifyItems:'center'}}
-            onClick={() => { handleSelect(gate)}}
-
-          >
-
-            Gate No {gate}
-
-          </div>
-
-        ))}
-
-      </div>
-
-    )}
-
-  </div>
-
-  </Form.Label>
-        </Form.Group>
-      </Form>
-      <Pie data={userData}/>
     </div>
 
+
+
+
   )
+
+
+
 
 }

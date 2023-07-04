@@ -1,6 +1,6 @@
 .loginPage{
 
-  background-color: rgba(20, 104, 197 , 0.1);
+  background-color: rgba(13, 187, 86 , 0.1);
     height: 450px;
     width: 400px;
     align-Self: center;
@@ -20,7 +20,7 @@
   }
 
   .registerPage{
-    background-color: rgba(20, 104, 197 , 0.1);
+    background-color: rgba(13, 187, 86 , 0.1);
     height: 600px;
     width:400px;
     align-Self:center;

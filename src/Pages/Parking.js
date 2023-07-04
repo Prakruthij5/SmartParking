@@ -65,7 +65,7 @@ export default function Parking() {
             <Card.Header as="h5" className="cardTitle fontFamilyCalibri">Check Available Slot</Card.Header>
             <Card.Body>
             <Container fluid>
-                <Form style={{backgroundColor:'rgba(20, 104, 197 , 0.1)',height:'340px'}}>
+                <Form style={{height:'340px'}}>
                     <div className="purpleBar">
                         {/* <Form.Label className="purpleBarText m-t-5rem m-l-10">User Details</Form.Label> */}
                     </div>

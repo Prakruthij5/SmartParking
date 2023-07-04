@@ -1,5 +1,5 @@
 .entryPage{
-    background-color: rgba(20, 104, 197 , 0.1);
+    background-color: rgba(20, 187, 86, 0.1);
 }
 .card{
  display: flex;
@@ -24,6 +24,7 @@ flex-direction: column;
   .row{
     justify-content: space-around;
     display: flex;
+    flex-wrap: nowrap;
     margin:55px;
     
   }

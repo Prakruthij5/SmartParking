@@ -1,4 +1,97 @@
 .dashboard{
-    height: 350px;
-    width: 600px;;
+
+    height: 350p;
+
+    width: 100%;
+
+    padding: 5px;
+
 }
+
+.seat-map {
+
+    border-collapse: collapse;
+
+    margin-bottom: 2px;
+
+    border: 1px solid black;
+
+  }
+
+ 
+
+  .seat-cell {
+
+    padding: 2px;
+
+    border: 1px solid #ccc;
+
+    text-align: center;
+
+    width: 15px;
+
+    font-size: 10px;
+
+  }
+
+  .booked {
+
+    background-color: red;
+
+    color: white;
+
+  }
+
+ 
+
+  .available {
+
+    background-color: white;
+
+ 
+
+  }
+
+  .container {
+
+    overflow: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #333333 #f0f0f0;
+
+    /* Optional: Set a maximum height and width to limit the container size */
+
+    max-height: 420px;
+
+    max-width: 300px;
+
+    /* border: 2px solid black; */
+
+  }
+
+ 
+
+  .container::-webkit-scrollbar {
+
+    width: 8px;
+
+    height: 8px;
+
+  }
+
+ 
+
+  .container::-webkit-scrollbar-track {
+
+    background-color: #f0f0f0;
+
+  }
+
+ 
+
+  .container::-webkit-scrollbar-thumb {
+
+    background-color: #333333;
+
+  }
